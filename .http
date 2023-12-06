@@ -1,0 +1,64 @@
+#hello, word
+GET http://127.0.0.1:3000
+###
+# findAll 게시글 전체 가져오기
+GET http://127.0.0.1:3000/board
+###
+# findOne 게시글 하나 가져오기
+GET http://127.0.0.1:3000/board/1
+###
+# create 게시글 작성하기
+POST http://127.0.0.1:3000/board
+content-type: application/json
+
+{
+    "userId": 1,
+    "contents": "hello"
+}
+###
+# update 게시글 수정하기
+PATCH  http://127.0.0.1:3000/board/2
+content-type: application/json
+
+{
+    "contents": "게시글 수정 성공"
+}
+###
+#remove
+DELETE http://127.0.0.1:3000/board/3
+###
+#getUser 유저 목록 전체 가져오기
+GET http://127.0.0.1:3000/user
+###
+#signup 회원가입하기
+POST http://127.0.0.1:3000/user
+content-type: application/json
+
+{
+    "username":"ooo111",
+    "password": "111",
+    "name":"kyhname223"
+}
+###
+#login 로그인하기
+POST http://127.0.0.1:3000/user/login
+content-type: application/json
+
+{
+    "username":"ooo111",
+    "password": "111"
+}
+###
+#login 로그인하기
+POST http://127.0.0.1:3000/login
+content-type: application/json
+
+{
+    "username":"ooo111",
+    "password": "111"
+}
+###
+#me jwt확인하기
+GET http://127.0.0.1:3000/me
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9vbzExMSIsIm5hbWUiOiJreWhuYW1lMjIzIiwiaWF0IjoxNzAxODc4ODU3LCJleHAiOjE3MDE4ODI0NTd9.O-joH-WPV1VviZmuMSsnPtNQUwOtlKb8vKTrJwZDaGs
